@@ -1,5 +1,5 @@
 import os
-from edit_distance import edit_dis
+from .edit_distance import edit_dis
 from flask import Flask, render_template, request
 
 
