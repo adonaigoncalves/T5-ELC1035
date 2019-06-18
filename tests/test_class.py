@@ -17,4 +17,8 @@ class TestAskMe(unittest.TestCase):
     def test_num_docs(self):
         self.assertEqual(len(convert_to_list("qa/dataset/Answers.txt")), 2609)
 
-    
+    def test_first_answer(self):
+        self.assertTrue(convert_to_list("qa/dataset/Answers.txt").index('Ten')==0)
+
+    def test_count_amazon(self):
+        self.assertEqual(convert_to_list("qa/dataset/Answers.txt").count("Amazon"),46)
