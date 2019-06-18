@@ -6,7 +6,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-@app.route('/askme', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def validate():
     if request.method == "POST":
         # retrive answer from form
@@ -18,5 +18,6 @@ def validate():
     return render_template('index.html')
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))
+#if __name__ == '__main__':
+    # app.run()
+    # app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))
