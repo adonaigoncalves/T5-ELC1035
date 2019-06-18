@@ -15,10 +15,13 @@ class TestAskMe(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
     
     def test_num_docs(self):
-        self.assertEqual(len(convert_to_list("dataset/Answers.txt")), 2609)
+        list = convert_to_list("qa/dataset/Answers.txt")
+        self.assertEqual(len(list), 2609)
 
     def test_first_answer(self):
-        self.assertTrue(convert_to_list("dataset/Answers.txt").index("Ten")==0)
+        list = convert_to_list("qa/dataset/Answers.txt")
+        self.assertTrue(list.index("Ten")==0)
 
     def test_count_qatar(self):
-        self.assertEqual(convert_to_list("dataset/Answers.txt").count("Qatar"),2)
+        list = convert_to_list("qa/dataset/Answers.txt")
+        self.assertEqual(list.count("Qatar"),2)
