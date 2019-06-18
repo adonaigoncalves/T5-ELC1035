@@ -1,6 +1,5 @@
 pytest
 pandas
-selenium
 flask
 nltk
 pathlib
