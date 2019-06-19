@@ -1,3 +1,4 @@
+import pandas as pd
 import unittest
 from qa.app import app
 from qa.parsedata import convert_to_list
@@ -22,6 +23,6 @@ class TestAskMe(unittest.TestCase):
         list = convert_to_list("qa/dataset/Answers.txt")
         self.assertTrue(list.index("Ten")==0)
 
-    def test_count_qatar(self):
+    def test_count_no(self):
         list = convert_to_list("qa/dataset/Answers.txt")
-        self.assertEqual(list.count("Qatar"),2)
+        self.assertEqual(list.count("no "), 50)
