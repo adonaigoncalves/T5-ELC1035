@@ -24,6 +24,6 @@ class TestAskMe(unittest.TestCase):
 
     def test_count_amazon(self):
         list = convert_to_list("qa/dataset/Answers.txt")
-        substrings = [sub for sub in list if "Amazon" in sub]
-        self.assertEqual(substrings.count("Amazon"), 46)
+        subcount = [sub for sub in list if "Amazon" in sub]
+        self.assertEqual(len(subcount), 46)
         
