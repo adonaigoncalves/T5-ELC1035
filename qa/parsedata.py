@@ -26,5 +26,5 @@ def generate_pairs():
 
 def convert_to_list(txt):
     """takes a text file and returns a list"""
-    data = pd.read_csv(txt, delimiter="\n", header=None)
-    return data.values.tolist()
+    data = [line.rstrip('\n') for line in open(txt)]
+    return data
