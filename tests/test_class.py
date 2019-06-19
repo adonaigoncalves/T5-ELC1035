@@ -23,6 +23,6 @@ class TestAskMe(unittest.TestCase):
         list = convert_to_list("qa/dataset/Answers.txt")
         self.assertTrue(list.index("Ten")==0)
 
-    def test_count_no(self):
+    def test_count_amazon(self):
         list = convert_to_list("qa/dataset/Answers.txt")
-        self.assertEqual(list.count("no "), 50)
+        self.assertEqual(list.count("Amazon"), 46)
