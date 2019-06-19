@@ -37,4 +37,4 @@ class TestAskMe(unittest.TestCase):
         
     def test_procfile(self):
         file = open("Procfile").read()
-        self.asserTrue(file.split("--port=",1)[1] == "$PORT")
+        self.assertTrue(file.split("--port=",1)[1] == "$PORT")
