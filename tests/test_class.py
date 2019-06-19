@@ -25,5 +25,12 @@ class TestAskMe(unittest.TestCase):
     def test_count_amazon(self):
         list = convert_to_list("qa/dataset/Answers.txt")
         subcount = [sub for sub in list if "Amazon" in sub]
-        self.assertEqual(len(subcount), 46)
-        
+        self.assertEqual(len(subcount), 18)
+    
+    def test_longest_answer(self):
+        list = convert_to_list("qa/dataset/Answers.txt")
+        self.assertEqual(len(max(data, key=len)), 1456)
+
+    def test_number_topics(self):
+        list = convert_to_list("qa/dataset/Topics.txt")
+        self.assertEqual(len(set(list)), 130)
