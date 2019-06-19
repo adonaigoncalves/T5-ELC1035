@@ -29,8 +29,12 @@ class TestAskMe(unittest.TestCase):
     
     def test_longest_answer(self):
         list = convert_to_list("qa/dataset/Answers.txt")
-        self.assertEqual(len(max(data, key=len)), 1456)
+        self.assertEqual(len(max(list, key=len)), 1456)
 
     def test_number_topics(self):
         list = convert_to_list("qa/dataset/Topics.txt")
         self.assertEqual(len(set(list)), 130)
+        
+    def test_procfile(self):
+        file = open("Procfile").read()
+        self.asserTrue(file.split("--port=",1)[1] == "$PORT")
